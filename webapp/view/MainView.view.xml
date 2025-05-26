@@ -1,0 +1,138 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" controllerName="com.training.exer1.controller.MainView">
+
+    <Page id="page" title="{i18n>title}">
+
+    <content>
+
+        <VBox id="idVbox" class="sapuiSmallMargin">
+
+        <items>
+
+            <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0" title="Details" labelSpanXL="3" labelSpanL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true">
+
+                <sap.ui.layout.form:content>
+
+                    <Label text="First Name" id="idLblFName"/>
+
+                    <Input width="100%" id="idInptFName"/>
+
+                    <Label text="Last Name" id="idLblLName"/>
+
+                    <Input width="100%" id="idInptLName"/>
+
+                    <Label text="Mode of Payment" width="100%" id="idLblMOP"/>
+
+                    <ComboBox id="idSelMOP" change="onChangeMOP">
+
+                        <items>
+
+                            <sap.ui.core:Item key="COD" text="Cash on Delivery" id="idItmCOD"/>
+
+                            <sap.ui.core:Item key="CC" text="Credit Card" id="idItmCC"/>
+
+                            <sap.ui.core:Item text="GCash" id="idItmGCash" key="GCASH"/>
+
+                            </items>
+                    </ComboBox>
+
+                    <Label text="Mobile Number" id="idLblPhone" visible="false"/>
+                    <Input id="idInputPhone" visible="false"/>
+                </sap.ui.layout.form:content>   
+            </sap.ui.layout.form:SimpleForm>
+
+        </items>
+
+        </VBox>
+
+        <Table id="idTableSCart" inset="false">
+
+            <items>
+
+                <ColumnListItem id="idColListItem1" vAlign="Middle">
+
+                    <cells>
+                        <Text text="iPhone 14 Pro Max" id="idText1"/>
+                        <Text text="2" id="idText2"/>
+                        <Text text="$2000" id="idText3"/>
+                    </cells>
+
+                </ColumnListItem>
+
+                <ColumnListItem id="idColListItem2" vAlign="Middle">
+
+                    <cells>
+                        <Text text="Louis Vuitton Speedy" id="idText4"/>
+                        <Text text="1" id="idText5"/>
+                        <Text text="$14000" id="idText6"/>
+                    </cells>
+
+                </ColumnListItem>
+
+            </items>
+
+            <columns>
+
+                <Column id="idCol1">
+                    <Text id="idColText1" text="Item"/> 
+<!-- commenting the standard code generated when adding element via layout.                     
+                    <header>
+
+                        <Label text="Header 1" id="label0"/>
+
+                    </header>
+-->
+                </Column>
+
+                <Column id="idCol2">
+                    <Text id="idColText2" text="Quantity"/> 
+
+                </Column>
+
+                <Column id="idCol3">
+                    <Text id="idColText3" text="Price"/> 
+
+                </Column></columns>
+
+            <headerToolbar>
+
+                <OverflowToolbar width="100%" id="idOFT">
+
+                    <content>
+
+                        <Title xmlns="sap.m" text="Shopping Cart" id="idTableTitleSCart"/>
+
+                        <ToolbarSpacer id="idTSpacer"/>
+
+                    </content>
+
+                </OverflowToolbar>
+
+            </headerToolbar></Table>
+    </content>
+
+    <footer>
+
+        <Toolbar width="100%" id="toolbar1">
+
+            <content>
+
+                <OverflowToolbar width="100%" id="idOFTFooter">
+
+                    <content>
+
+                        <ToolbarSpacer id="idTSpacerFooter"/>
+
+                        <Button text="Check Out" id="idBtnCheckout" icon="sap-icon://cart" tooltip="Check Out" press="onPressCheckout"/> <!--sa step 11, press="onAddItem" ito-->
+                        
+                    </content>
+
+                </OverflowToolbar>
+
+            </content>
+
+        </Toolbar>
+
+    </footer>
+
+    </Page>
+</mvc:View>
