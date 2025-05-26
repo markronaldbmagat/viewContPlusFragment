@@ -1,0 +1,47 @@
+<!-- will be updated later...-->
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+        <Table id="idTableSCart" inset="false">
+            <items>
+                <ColumnListItem id="idColListItem1" vAlign="Middle">
+                    <cells>
+                        <Text text="iPhone 14 Pro Max" id="idText1"/>
+                        <Text text="2" id="idText2"/>
+                        <Text text="$2000" id="idText3"/>
+                    </cells>
+                </ColumnListItem>
+
+                <ColumnListItem id="idColListItem2" vAlign="Middle">
+                    <cells>
+                        <Text text="Louis Vuitton Speedy" id="idText4"/>
+                        <Text text="1" id="idText5"/>
+                        <Text text="$14000" id="idText6"/>
+                    </cells>
+
+                </ColumnListItem>
+            </items>
+
+            <columns>
+                <Column id="idCol1">
+                    <Text id="idColText1" text="Item"/> 
+                </Column>
+
+                <Column id="idCol2">
+                    <Text id="idColText2" text="Quantity"/> 
+
+                </Column>
+                <Column id="idCol3">
+                    <Text id="idColText3" text="Price"/> 
+                </Column>
+            </columns>
+
+            <headerToolbar>
+                <OverflowToolbar width="100%" id="idOFT">
+                    <content>
+                        <Title xmlns="sap.m" id="idTableTitleSCart" text="{i18n>shoppingTblTitle}" />
+                        <ToolbarSpacer id="idTSpacer"/>
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+        </Table>
+</core:FragmentDefinition>

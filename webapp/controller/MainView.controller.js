@@ -8,10 +8,30 @@ sap.ui.define([
         onInit() {
         },
         // pinaltan ng onPressCheckout sa Step 12 ito..
+        // in exercise related to fragments, this was used again.. see step 7
+        //id = "com.training.exer1"
         onAddItem: function () {
-            this.fnDisplayMsg("Add button pressed");
-        },
+            // Comment this code for now
+            // var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+            // var sMsg = oTextBundle.getText("addButtonMsg");
+            // this.fnDisplayMsg(sMsg);
         
+            // Instantiate the fragment
+        
+            // create dialog lazily
+            if (!this.oDialog) {
+                this.oDialog = this.loadFragment({
+                    name: "com.training.exer1.fragment.ProductDialog"
+                });
+            }
+            this.oDialog.then(function(oDialog) {
+                oDialog.open();
+            });
+        },
+        onCloseDialog: function (){
+            this.getView().byId("idProductDialog").close();
+        },
+
         fnDisplayMsg: function (sMsg) {
             MessageToast.show(sMsg);
         },

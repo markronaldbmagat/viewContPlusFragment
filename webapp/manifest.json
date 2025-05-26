@@ -69,8 +69,8 @@
         "type": "View",
         "viewType": "XML",
         "path": "com.training.exer1.view",
-        "async": true,
-        "viewPath": "com.training.exer1.view"
+        "async": true
+        
       },
       "routes": [
         {
@@ -84,7 +84,8 @@
       "targets": {
         "TargetMainView": {
           "id": "MainView",
-          "name": "MainView"
+          "name": "MainView",
+          "viewPath": "com.training.exer1.view"
         }
       }
     },
