@@ -70,23 +70,32 @@
         "viewType": "XML",
         "path": "com.training.exer1.view",
         "async": true
-        
       },
       "routes": [
-        {
-          "name": "RouteMainView",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMainView"
-          ]
-        }
+  {
+    "name": "RouteMainView",
+    "pattern": ":?query:",
+    "target": ["TargetMainView"]
+  },
+  {
+    "name": "RouteReviewPage",
+    "pattern": "Review/{firstName}",
+    "target": ["TargetReviewPage"]
+  }
       ],
       "targets": {
         "TargetMainView": {
           "id": "MainView",
           "name": "MainView",
+          "clearControlAggregation": false,
+          "transition": "slide",
           "viewPath": "com.training.exer1.view"
-        }
+        },
+        "TargetReviewPage": {
+                    "viewId": "ReviewPage",
+                    "viewName": "ReviewPage"
+                }
+
       }
     },
     "rootView": {

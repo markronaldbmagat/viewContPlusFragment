@@ -31,6 +31,30 @@ sap.ui.define([
         onCloseDialog: function (){
             this.getView().byId("idProductDialog").close();
         },
+        onPressCheckout: function (){
+            var oInputFName = this.getView().byId("idInptFName");
+            var oInputLName = this.getView().byId("idInptLName");
+            var oInputFNameValue = oInputFName.getValue();
+            var oInputLNameValue = oInputLName.getValue();
+            var oRouter = this.getOwnerComponent().getRouter();
+
+            // Check if first name and last name is blank
+            if (oInputFNameValue === "" || oInputLNameValue === ""){
+               
+// set value state to Error
+                oInputFName.setValueState("Error");
+                oInputLName.setValueState("Error");
+            } else {
+                oInputFName.setValueState("None");
+                oInputLName.setValueState("None");
+
+                //Navigate to review page passing first
+                oRouter.navTo("RouteReviewPage", {
+                    firstName: oInputFNameValue
+                });
+
+            }
+        },
 
         fnDisplayMsg: function (sMsg) {
             MessageToast.show(sMsg);
@@ -50,16 +74,7 @@ sap.ui.define([
             var bShow = (sSelectedKey === "GCASH");
             oMobileLabel.setVisible(bShow);         //b = boolean; Show not a reserved keyword but a standard practise for true or false. no need to declare ito
             oMobileInput.setVisible(bShow);
-        },
-        onPressCheckout: function () {
-            //this.fnDisplayMsg("Add button pressed");
-            var oInputFNameValue = this.getView().byId("idInptFName").getValue();
-
-            // Check if first name is blank
-            if (oInputFNameValue === ""){
-                sap.m.MessageToast.show("Required Field is blank"); 
-            }
-        }       
+        }
     });
 });
 // in summary, this exercise will not check which row was clicked.
